@@ -1,0 +1,107 @@
+.table tbody tr {
+	&.success.highlighted td, td.success {
+		background-color: #DFF0D8;
+	}
+	&.highlighted td , td.highlighted {
+		background-color: #F5F5F5;
+	}
+	.yui-dt-editable {
+		cursor:pointer;
+	}
+}
+
+.table th.yui-dt-sortable {
+	.yui-dt-liner:after {
+		border-color: #000000 transparent;
+		border-style: solid;
+		border-width: 0 4px 4px;
+		content: "";
+		float: right;
+		margin-top: 7px;
+		visibility: hidden;
+	}
+	&.yui-dt-asc .yui-dt-liner:after {
+		opacity: 0.6;
+		visibility: visible;
+	}
+	&.yui-dt-desc .yui-dt-liner:after {
+		border-color: #000000 transparent -moz-use-text-color;
+		border-style: solid solid none;
+		border-width: 4px 4px medium;
+		box-shadow: none;
+		opacity: 0.6;
+		visibility: visible;
+	}
+
+}
+.yui-dt {
+	.table {
+		margin-bottom: 5px;
+	}
+	.yui-dt-hd {
+		.table {
+			margin-bottom: 0px;
+		}
+		.table-bordered {
+			border-radius: 4px 4px 0px 0px;
+			thead:last-child tr:last-child th:first-child,
+			tbody:last-child tr:last-child td:first-child,
+			tfoot:last-child tr:last-child td:first-child {
+				border-radius: 4px 0px 0px 0px;
+			}
+			thead:last-child tr:last-child th:last-child,
+			tbody:last-child tr:last-child td:last-child,
+			tfoot:last-child tr:last-child td:last-child {
+				border-bottom-right-radius: 0px;
+			}
+		}
+	}
+}
+.yui-dt-scrollable {
+	.yui-dt-bd {
+		thead {
+			tr, th {
+				left: -1500px;
+				position: absolute;
+			}
+		}
+	}
+}
+.yui-dt-editor {
+    position:absolute;
+    background-clip: padding-box;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    outline: medium none;
+    .yui-dt-button {
+    	background-color: #f5f5f5;
+    	border-radius: 0 0 6px 6px;
+    	border-top: 1px solid #DDDDDD;
+    	margin-bottom: 0px;
+    	padding: 4px 5px 5px;
+    	text-align: right;
+    	.btn {
+    		margin-left: 5px;
+    	}
+    }
+    input, textarea, select {
+    	margin-bottom: 0px;
+    }
+    .checkbox, .radio {
+    	margin-left: 5px;
+    }
+}
+
+.yui-dt-paginator {
+	.pagination {
+		margin: 0px 0px 0px 0px;
+	}
+	.yui-pg-current {
+		line-height: 32px;
+	}
+	.yui-pg-rpp-options {
+		margin-bottom: 5px;
+	}
+}

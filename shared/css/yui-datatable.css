@@ -1,0 +1,17 @@
+.table tbody tr.success.highlighted td,.table tbody tr td.success{background-color:#DFF0D8;}
+.table tbody tr.highlighted td,.table tbody tr td.highlighted{background-color:#F5F5F5;}
+.table tbody tr .yui-dt-editable{cursor:pointer;}
+.table th.yui-dt-sortable .yui-dt-liner:after{border-color:#000000 transparent;border-style:solid;border-width:0 4px 4px;content:"";float:right;margin-top:7px;visibility:hidden;}
+.table th.yui-dt-sortable.yui-dt-asc .yui-dt-liner:after{opacity:0.6;visibility:visible;}
+.table th.yui-dt-sortable.yui-dt-desc .yui-dt-liner:after{border-color:#000000 transparent -moz-use-text-color;border-style:solid solid none;border-width:4px 4px medium;box-shadow:none;opacity:0.6;visibility:visible;}
+.yui-dt .table{margin-bottom:5px;}
+.yui-dt .yui-dt-hd .table{margin-bottom:0px;}
+.yui-dt .yui-dt-hd .table-bordered{border-radius:4px 4px 0px 0px;}.yui-dt .yui-dt-hd .table-bordered thead:last-child tr:last-child th:first-child,.yui-dt .yui-dt-hd .table-bordered tbody:last-child tr:last-child td:first-child,.yui-dt .yui-dt-hd .table-bordered tfoot:last-child tr:last-child td:first-child{border-radius:4px 0px 0px 0px;}
+.yui-dt .yui-dt-hd .table-bordered thead:last-child tr:last-child th:last-child,.yui-dt .yui-dt-hd .table-bordered tbody:last-child tr:last-child td:last-child,.yui-dt .yui-dt-hd .table-bordered tfoot:last-child tr:last-child td:last-child{border-bottom-right-radius:0px;}
+.yui-dt-scrollable .yui-dt-bd thead tr,.yui-dt-scrollable .yui-dt-bd thead th{left:-1500px;position:absolute;}
+.yui-dt-editor{position:absolute;background-clip:padding-box;background-color:#FFFFFF;border:1px solid rgba(0, 0, 0, 0.3);border-radius:6px 6px 6px 6px;box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);outline:medium none;}.yui-dt-editor .yui-dt-button{background-color:#f5f5f5;border-radius:0 0 6px 6px;border-top:1px solid #DDDDDD;margin-bottom:0px;padding:4px 5px 5px;text-align:right;}.yui-dt-editor .yui-dt-button .btn{margin-left:5px;}
+.yui-dt-editor input,.yui-dt-editor textarea,.yui-dt-editor select{margin-bottom:0px;}
+.yui-dt-editor .checkbox,.yui-dt-editor .radio{margin-left:5px;}
+.yui-dt-paginator .pagination{margin:0px 0px 0px 0px;}
+.yui-dt-paginator .yui-pg-current{line-height:32px;}
+.yui-dt-paginator .yui-pg-rpp-options{margin-bottom:5px;}

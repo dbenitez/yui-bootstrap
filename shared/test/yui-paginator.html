@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="../../2.2.1/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../2.2.1/css/bootstrap-responsive.min.css" />
+		<link type="text/css" rel="stylesheet" href="../css/yui-datatable.css" />
+		<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+		<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+		<script src="http://yui.yahooapis.com/2.9.0/build/datasource/datasource-min.js"></script>
+		<script src="http://yui.yahooapis.com/2.9.0/build/json/json-min.js"></script>
+		<script src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
+		<script src="../js/yui-datatable.js"></script>
+		<script src="../js/yui-paginator.js"></script>
+		<script type="text/javascript">
+
+			var pag;
+			var dt;
+			YAHOO.util.Event.onDOMReady(function(){
+				dt = new YAHOO.widget.DataTable(
+						"paginated",
+						[
+							{key:"id", label: "ID"},
+							{key:"name", label: "Name", sortable: true, editor: new YAHOO.widget.TextareaCellEditor()},
+							{key:"date", label: "Date", editor: new YAHOO.widget.TextboxCellEditor({disableBtns:false})},
+							{key:"price", label: "Price", editor: new YAHOO.widget.DropdownCellEditor({multiple:true,dropdownOptions:["apple","banana","cherry"]})},
+							{key:"number", label: "Number", editor: new YAHOO.widget.CheckboxCellEditor({checkboxOptions:["red","yellow","blue"]})}
+						],
+						new YAHOO.util.DataSource("data.json?",{
+							responseType: YAHOO.util.DataSource.TYPE_JSON,
+							responseSchema: {
+								resultsList: "records",
+								fields: ["id","name","date","price","number"]
+							}
+						}),
+						{
+							paginator: new YAHOO.widget.Paginator({
+								rowsPerPage: 15,
+								template: YAHOO.widget.Paginator.TEMPLATE_DATATABLE_ROWS_PER_PAGE,
+								rowsPerPageOptions : [10,25,50,100]
+							}),
+							initialRequest: "results:50"
+						}
+				);
+				dt.subscribe("cellMouseoverEvent", dt.onEventHighlightCell);
+				dt.subscribe("cellMouseoutEvent", dt.onEventUnhighlightCell);
+				dt.subscribe("cellClickEvent", dt.onEventShowCellEditor);
+				dt.subscribe("cellSelectEvent", dt.clearTextSelection);
+				dt.subscribe("theadCellMouseoverEvent", dt.onEventHighlightColumn);
+				dt.subscribe("theadCellMouseoutEvent", dt.onEventUnhighlightColumn);
+
+				pag = new YAHOO.widget.Paginator({
+					rowsPerPage: 10,
+					totalRecords: 100,
+					containers: ['pag1']
+				});
+				pag.render();
+			})
+		</script>
+	</head>
+	<body class="yui-skin-sam">
+		<div id="paginated"></div>
+		<div id="pag1"></div>
+	</body>
+</html>

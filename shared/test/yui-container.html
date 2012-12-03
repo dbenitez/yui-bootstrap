@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="../../2.2.1/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../2.2.1/css/bootstrap-responsive.min.css" />
+		<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+		<script src="http://yui.yahooapis.com/2.9.0/build/dragdrop/dragdrop-min.js"></script>
+		<script src="../js/yui-container.js"></script>
+		<script type="text/javascript">
+		var panel;
+			YAHOO.util.Event.onDOMReady(function(){
+				panel = new YAHOO.widget.Dialog("win", {
+					width: "400px",
+					fixedcenter: true,
+					constraintoviewport: true,
+					underlay: "shadow",
+					close: true,
+					visible: false,
+					draggable: true,
+					buttons: [{text: "Submit", isDefault: true},{text: "Cancel"}]
+				});
+				panel.setHeader("The Panel Header");
+				panel.setBody("The panel Body");
+				panel.render();
+				panel.show();
+			})
+		</script>
+	</head>
+	<body class="yui-skin-sam">
+		<div id="win"></div>
+		<button type="button" class="btn" onclick="panel.show()">Open</button>
+		<button type="button" class="btn" onclick="panel.hide()">Hide</button>
+	</body>
+</html>

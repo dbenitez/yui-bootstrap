@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="../css/bootstrap-responsive.min.css" />
+		<script src="http://yui.yahooapis.com/3.7.3/build/yui/yui-min.js"></script>
+		<script src="../../../shared/utils/string-min.js"></script>
+		<script src="../../../shared/form/yui3-form.js"></script>
+		<script src="../js/yui3-validation.js"></script>
+		<script>
+			YUI().use('node','validation', function(Y){
+				var valid = new Y.Validation({node:'#myForm',immediate:true});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="page-header"><h1>Validation</h1></div>
+			<form name="form" id="myForm" method="post" class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label">Field</label>
+					<div class="controls">
+						<input type="text" name="field" id="fieldID" class="required validate-email">
+					</div>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
